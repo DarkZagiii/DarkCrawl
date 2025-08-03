@@ -1,0 +1,7 @@
+# Konfigurasi utama framework AI Scraper
+llm:
+  provider: "ollama"  # Pilihan: ollama, openai, transformers
+  model: "llama3"
+output:
+  default_format: "csv"
+  export_path: "./data/"

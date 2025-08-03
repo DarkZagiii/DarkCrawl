@@ -1,0 +1,9 @@
+requests
+httpx
+beautifulsoup4
+selectolax
+openai
+transformers
+ollama
+pandas
+typer
