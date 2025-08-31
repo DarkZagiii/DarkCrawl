@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "total_items": 1,
+    "processed_at": "2025-08-12T20:46:19.928564",
+    "platform": "universal"
+  },
+  "products": [
+    {
+      "id": "-7848841",
+      "title": "Shopee Indonesia | Situs Belanja Online Terlengkap & Terpercaya",
+      "description": "...",
+      "price": "Price not found",
+      "images": [
+        {
+          "url": "https://deo.shopeemobile.com/shopee/modules-federation/live/0/shopee__cart-panel-context/1.3.0/pc/41be41288ff73badac7a.svg",
+          "alt": "icon exclamation mark",
+          "title": ""
+        },
+        {
+          "url": "https://www.facebook.com/tr?id=466924370133774&ev=PageView&noscript=1",
+          "alt": "",
+          "title": ""
+        }
+      ],
+      "links": [],
+      "category": "Lainnya",
+      "metadata": {
+        "url": "https://shopee.co.id/search?keyword=vga%20rtx%203060&trackingId=searchhint-1754912625-70379fab-76a8-11f0-9e25-0abcaf5d2ba5",
+        "extracted_at": "2025-08-12 20:46:19",
+        "word_count": 0
+      }
+    }
+  ],
+  "categories": {
+    "Lainnya": 1
+  },
+  "statistics": {
+    "total_images": 2,
+    "total_links": 0,
+    "price_range": {
+      "min": null,
+      "max": null
+    }
+  }
+}

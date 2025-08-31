@@ -1,38 +1,22 @@
+#!/usr/bin/env python3
 """
-main.py
-Entry point CLI untuk AI Scraper Framework.
+Main CLI entry point untuk universal web scraper
 """
-
 
 import typer
-import sys
-import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-import cli.commands as commands
+from cli.commands import scrape, batch_scrape, test_scraper
 
+# Create typer app
+app = typer.Typer(
+    name="Universal Web Scraper",
+    help="Scraper universal untuk semua jenis website",
+    no_args_is_help=True
+)
 
-# Multi-command CLI
-app = typer.Typer()
-app.add_typer(typer.Typer(), name="scrape")
-app.command()(commands.scrape)
+# Register commands
+app.command()(scrape)
+app.command("batch-scrape")(batch_scrape)
+app.command("test-scraper")(test_scraper)
 
 if __name__ == "__main__":
-    import typer
-    if len(sys.argv) == 1:
-        # Mode interaktif
-        url = input("[AI-Scraper] Masukkan URL yang ingin di-scrape: ")
-        if not url.strip():
-            print("[ERROR] URL tidak boleh kosong.")
-            sys.exit(1)
-        output = input("[AI-Scraper] Simpan hasil sebagai (output.csv/output.json/output.md): ")
-        if not output.strip():
-            output = "output.csv"
-        # Jalankan scrape
-        try:
-            # Panggil fungsi scrape langsung
-            commands.scrape(query=url, output=output, plugin=None)
-        except Exception as e:
-            print(f"[ERROR] Gagal scraping: {e}")
-            sys.exit(1)
-    else:
-        app()
+    app()

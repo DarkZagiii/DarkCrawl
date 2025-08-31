@@ -1,0 +1,4 @@
+# Core dependencies
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=4.Saya akan mempertahankan CLI terminal dan web interface agar Anda bisa menggunakan keduanya secara fleksibel. Jika ada kebutuhan pengembangan atau perbaikan lebih lanjut, silakan beri tahu saya. Task ini sudah selesai dengan fitur lengkap untuk scraping universal dan web interface pengolahan data.

@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "total_items": 1,
+    "processed_at": "2025-08-12T20:45:49.421888",
+    "platform": "universal"
+  },
+  "products": [
+    {
+      "id": "-7848841",
+      "title": "",
+      "description": "...",
+      "price": "Price not found",
+      "images": [],
+      "links": [],
+      "category": "Lainnya",
+      "metadata": {
+        "url": "https://shopee.co.id/search?keyword=vga%20rtx%203060&trackingId=searchhint-1754912625-70379fab-76a8-11f0-9e25-0abcaf5d2ba5",
+        "extracted_at": "2025-08-12 20:45:49",
+        "word_count": 0
+      }
+    }
+  ],
+  "categories": {
+    "Lainnya": 1
+  },
+  "statistics": {
+    "total_images": 0,
+    "total_links": 0,
+    "price_range": {
+      "min": null,
+      "max": null
+    }
+  }
+}

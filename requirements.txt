@@ -1,9 +1,26 @@
-requests
-httpx
-beautifulsoup4
-selectolax
-openai
-transformers
-ollama
-pandas
-typer
+# Core dependencies
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+pandas>=2.0.0
+typer>=0.9.0
+pyyaml>=6.0
+
+# Selenium for JavaScript-heavy sites
+selenium>=4.15.0
+webdriver-manager>=4.0.0
+
+# Optional dependencies for enhanced functionality
+openpyxl>=3.1.0
+python-dateutil>=2.8.0
+fake-useragent>=1.4.0
+
+# Development dependencies
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
+
+# AI/ML dependencies (optional)
+transformers>=4.30.0
+torch>=2.0.0
+openai>=1.0.0
