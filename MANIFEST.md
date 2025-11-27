@@ -10,9 +10,10 @@
 
 ### Configuration & Setup
 - `requirements.txt` - Python dependencies
-- `setup.sh` - Setup/installation script
+- `setup.sh` - Script instalasi
 - `.gitignore` - Git ignore rules
-- `README.md` - Documentation
+- `README.md` - Dokumentasi lengkap (Bahasa Indonesia 🇮🇩)
+- `README_BACKUP.md` - Dokumentasi backup
 
 ## Project Status
 
