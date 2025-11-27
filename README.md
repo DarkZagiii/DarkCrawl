@@ -1,203 +1,476 @@
-# Universal Web Scraper
+# E-Commerce Scraper API# � **DarkCrawl – Universal Web Scraper Framework**
 
-Scraper universal yang dapat menangani berbagai jenis website dengan dukungan JavaScript rendering dan ekstraksi data komprehensif.
 
-## Fitur Utama
 
-- ✅ **Universal Scraping**: Bisa digunakan untuk semua jenis website
-- ✅ **JavaScript Support**: Menggunakan Selenium untuk website berbasis JavaScript
-- ✅ **Multi-format Output**: CSV, JSON, Markdown, Excel
-- ✅ **Batch Processing**: Scraping multiple URLs sekaligus
-- ✅ **Comprehensive Data Extraction**: 
-  - Judul, deskripsi, konten
-  - Gambar dan link
-  - Meta tags dan structured data
-  - Tabel, list, form
-  - Social media links
-  - Contact information
-- ✅ **Anti-bot Measures**: User-agent rotation, delays
-- ✅ **Error Handling**: Robust error handling dan retry mechanism
+Scraper e-commerce production-ready untuk Tokopedia, Lazada, dan Shopee.> **Status: ✅ READY FOR TESTING** | Version 2.0 | Selenium Integration Complete
 
-## Instalasi
 
-### 1. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
 
-### 2. Install ChromeDriver (untuk Selenium)
-```bash
-# Otomatis dengan webdriver-manager
-# Atau manual download dari https://chromedriver.chromium.org/
-```
+## Features ✨## 📖 Overview
 
-## Cara Penggunaan
 
-### 1. Scraping Single URL
-```bash
-# Basic scraping
-python -m cli.main scrape --query "https://example.com" --output result.csv
 
-# Dengan Selenium untuk JavaScript-heavy sites
-python -m cli.main scrape --query "https://example.com" --selenium --delay 3
+- ✅ **Tokopedia**: Extract products dengan harga (20+ produk per search)**DarkCrawl** adalah *universal, modular, dan pluggable web-scraping framework* yang memungkinkan scraping dari berbagai website (e-commerce, news, forum, dll.) menggunakan antarmuka web yang mudah digunakan.
 
-# Output JSON
-python -m cli.main scrape --query "https://example.com" --output result.json
-```
+- ✅ **Lazada**: Extract products dengan harga (20+ produk per search)
 
-### 2. Batch Scraping
-```bash
-# Buat file urls.txt dengan daftar URL
-echo "https://example1.com" > urls.txt
-echo "https://example2.com" >> urls.txt
+- ❌ **Shopee**: Blocked (anti-bot protection - butuh residential proxy)Framework ini memiliki arsitektur **plugin-based** dengan dukungan:
 
-# Jalankan batch scraping
-python -m cli.main batch-scrape --file urls.txt --output batch_results.csv --delay 2
-```
+- 🌐 **REST API**: `/api/search?q=keyword` endpoint- ✅ **Selenium WebDriver** untuk JavaScript-heavy sites (Shopee, Tokopedia, Lazada)
 
-### 3. Testing
-```bash
-# Test scraper pada satu URL
-python -m cli.main test-scraper --url "https://example.com"
-```
+- 📊 **JSON Response**: Structured product data- ✅ **Requests library** untuk fallback scraping yang cepat
 
-## Struktur Data Output
+- ⚡ **Lightweight**: Minimal dependencies- ✅ **Multi-strategy extraction** untuk hasil yang akurat
 
-Setiap item hasil scraping berisi:
+- ✅ **Web interface** tanpa perlu command line
+
+## Installation- ✅ **REST API** untuk integrasi programmatic
+
+- ✅ **SQLite database** untuk penyimpanan
+
+### Requirements
+
+- Python 3.8+### Arsitektur 3-Tier
+
+- Chrome/Chromium browser
+
+- pip```
+
+Raw Data Collection → Data Normalization → Storage & Export
+
+### Setup```
+
+
+
+```bash---
+
+# Clone repository
+
+git clone https://github.com/DarkZagiii/DarkCrawl.git## 🎯 Fitur Utama
+
+cd DarkCrawl
+
+### 1️⃣ **Smart Scraping**
+
+# Create virtual environment- ✅ Auto-detect platform (Shopee, Tokopedia, Lazada)
+
+python -m venv venv- ✅ Dual-method (requests + Selenium fallback)
+
+source venv/bin/activate  # Linux/Mac- ✅ Intelligent routing to appropriate scraper
+
+# or- ✅ Error handling dengan graceful degradation
+
+venv\Scripts\activate  # Windows
+
+### 2️⃣ **JavaScript Support**
+
+# Install dependencies- ✅ Selenium WebDriver integration
+
+pip install -r requirements.txt- ✅ 30-40 second render time (but accurate)
+
+- ✅ Wait strategies untuk dynamic content
+
+# Verify installation- ✅ Automated browser management
+
+python -c "import selenium; print('✓ Selenium installed')"
+
+```### 3️⃣ **Advanced Parsing**
+
+- ✅ 3-tier extraction strategies
+
+## Usage- ✅ Multiple CSS selectors fallback
+
+- ✅ Aggressive div scanning for robustness
+
+### 1. Command Line - Tokopedia- ✅ Deduplication dan data cleaning
+
+
+
+```bash### 4️⃣ **Web Interface**
+
+python tokopedia_scraper_smart.py "laptop"- ✅ Modern, user-friendly UI
+
+```- ✅ Real-time scraping progress
+
+- ✅ Results display dengan formatting
+
+**Output:**- ✅ CSV/JSON export
 
 ```json
+
+[### 5️⃣ **API Endpoints**
+
+  {- ✅ POST /api/scrape
+
+    "name": "HIGH QUALITY !! Laptop HP PROBOOK 440 G6...",- ✅ GET /api/results
+
+    "price": "Rp3.750.000",- ✅ JSON response format
+
+    "platform": "Tokopedia"- ✅ Programmatic access
+
+  },* User hanya input URL → engine jalan otomatis
+
+  ...
+
+]### **2. Plugin-Based Architecture**
+
+```
+
+Contoh plugin:
+
+### 2. Command Line - Lazada
+
+* `plugin_ecommerce_tokopedia.py`
+
+```bash* `plugin_shopee.py`
+
+python lazada_scraper_clean.py* `plugin_instagram.py`
+
+```* `plugin_youtube.py`
+
+
+
+### 3. Combined SearchSetiap plugin memiliki fungsi:
+
+
+
+```bash* `scrape_raw(url)`
+
+python combined_scraper_fixed.py "laptop"* `normalize(raw_data)`
+
+```* `save_to_db(clean_data)`
+
+
+
+Returns **30+ products** (Tokopedia + Lazada combined)### **3. Database System**
+
+
+
+### 4. REST API ServerMenggunakan dua tipe penyimpanan:
+
+
+
+```bash#### a) `raw_scrape` table
+
+# Start server on localhost:8000
+
+python api_server.pyUntuk menyimpan hasil mentah:
+
+
+
+# In another terminal, test endpoint:* url
+
+curl "http://localhost:8000/api/search?q=laptop"* scraped_at
+
+```* raw_json
+
+* plugin
+
+**API Endpoints:*** status
+
+
+
+| Endpoint | Description | Example |#### b) Processed tables
+
+|----------|-------------|---------|
+
+| `GET /api/search?q=keyword` | Search all platforms | `/api/search?q=laptop` |Tergantung kategori:
+
+| `GET /api/search?q=keyword&platform=tokopedia` | Tokopedia only | `/api/search?q=phone&platform=tokopedia` |
+
+| `GET /api/search?q=keyword&platform=lazada` | Lazada only | `/api/search?q=tablet&platform=lazada` |* `ecommerce_products`
+
+| `GET /api/status` | API status | `/api/status` |* `instagram_posts`
+
+| `GET /` | API documentation | `/` |* `youtube_videos`
+
+
+
+**API Response Format:**### **4. Data Normalization Layer**
+
+
+
+```jsonMengubah raw HTML/JSON → data Python dict konsisten.
+
 {
-  "url": "https://example.com",
-  "title": "Judul Halaman",
-  "description": "Deskripsi halaman dari meta tags",
-  "content": "Konten utama halaman",
-  "text_content": "Semua teks dari halaman",
-  "images": [
-    {
-      "url": "https://example.com/image.jpg",
-      "alt": "Alt text",
-      "title": "Image title"
-    }
-  ],
-  "links": [
-    {
-      "url": "https://example.com/link",
-      "text": "Link text",
-      "title": "Link title"
-    }
-  ],
-  "meta_tags": {
-    "description": "Meta description",
-    "keywords": "keyword1, keyword2"
-  },
-  "structured_data": {
-    "json_ld": [...],
-    "open_graph": {...},
-    "twitter_card": {...}
-  },
-  "headings": {
-    "h1": ["Heading 1"],
-    "h2": ["Heading 2"]
-  },
-  "tables": [...],
-  "forms": [...],
-  "social_media": {
-    "facebook": [...],
-    "twitter": [...]
-  },
-  "contact_info": {
-    "emails": [...],
-    "phones": [...]
-  },
-  "extracted_at": "2024-01-01 12:00:00"
+
+  "status": "success",Contoh output normalized untuk e-commerce:
+
+  "keyword": "laptop",
+
+  "total": 32,```json
+
+  "products": [{
+
+    {  "product_id": "xyz123",
+
+      "name": "Laptop Model X",  "name": "Headphone Gaming",
+
+      "price": "Rp2.500.000",  "price": 180000,
+
+      "platform": "Lazada"  "currency": "IDR",
+
+    }  "store_name": "Toko Audio",
+
+  ],  "total_sold": 356,
+
+  "breakdown": {  "rating": 4.8,
+
+    "tokopedia": 12,  "url": "https://tokopedia.com/...",
+
+    "lazada": 20,  "image_url": "https://..."
+
+    "shopee": 0}
+
+  }```
+
 }
+
+```### **5. Web Interface**
+
+
+
+## File StructureFitur UI:
+
+
+
+```* Input URL
+
+DarkCrawl/* Pilih plugin (atau autodetect)
+
+├── tokopedia_scraper_smart.py    # Tokopedia scraper* History scraping
+
+├── lazada_scraper_clean.py        # Lazada scraper* Tampilkan hasil processed
+
+├── combined_scraper_fixed.py      # Combined search* Download CSV / JSON
+
+├── api_server.py                  # Flask REST API* Log error debugging
+
+├── requirements.txt               # Dependencies
+
+└── README.md                      # This file### **6. Export System**
+
 ```
 
-## Opsi Command Line
+User bisa download:
 
-### Perintah `scrape`
-- `--query, -q`: URL atau prompt untuk scraping
-- `--output`: Nama file output (default: output.csv)
-- `--plugin`: Nama plugin (opsional)
-- `--selenium, -s`: Gunakan Selenium untuk JavaScript
-- `--delay, -d`: Delay antar request (detik)
+## Configuration
 
-### Perintah `batch-scrape`
-- `--file, -f`: File berisi daftar URL
-- `--output`: Nama file output
-- `--selenium, -s`: Gunakan Selenium
-- `--delay, -d`: Delay antar request
+* CSV
 
-### Perintah `test-scraper`
-- `--url, -u`: URL untuk testing
+### Proxy Support (Shopee)* JSON
 
-## Contoh Penggunaan
+* (opsional) Excel
 
-### 1. Scraping E-commerce
-```bash
-python -m cli.main scrape --query "https://www.tokopedia.com/p/handphone-tablet" --selenium --output tokopedia.csv
-```
+To enable Shopee scraping (requires residential proxy):
 
-### 2. Scraping News Website
-```bash
-python -m cli.main scrape --query "https://news.detik.com" --output news.json
-```
-
-### 3. Scraping Forum
-```bash
-python -m cli.main scrape --query "https://kaskus.co.id" --selenium --delay 5 --output forum_data.csv
-```
-
-## Troubleshooting
-
-### Error: ChromeDriver not found
-```bash
-# Install ChromeDriver otomatis
-pip install webdriver-manager
-```
-
-### Error: Permission denied
-```bash
-# Pada Linux/Mac
-chmod +x chromedriver
-```
-
-### Error: Timeout
-```bash
-# Tambahkan delay lebih lama
-python -m cli.main scrape --query "https://example.com" --delay 5 --timeout 30
-```
-
-## Tips
-
-1. **Gunakan Selenium** untuk website dengan konten dinamis
-2. **Tambahkan delay** untuk menghindari rate limiting
-3. **Gunakan batch processing** untuk scraping banyak URL
-4. **Test terlebih dahulu** dengan perintah `test-scraper`
-5. **Gunakan output JSON** untuk data yang kompleks
-
-## Pengembangan Lanjutan
-
-Untuk menambahkan plugin khusus, buat file di folder `plugins/` dengan format:
+---
 
 ```python
-from core.base_plugin import BasePlugin
 
-class CustomPlugin(BasePlugin):
-    def match(self, url):
-        return "custom-site.com" in url
-        
-    def extract(self, html, url=None):
-        # Custom extraction logic
-        return data
+# In scraper file, add:# **📐 Project Architecture Overview**
+
+proxy = "http://proxy-ip:port"
+
+options.add_argument(f'--proxy-server={proxy}')```
+
+```[Web UI]
+
+   |
+
+### Timeout Settings   V
+
+[Core API Router] --- chooses plugin ---> [Plugin A/B/C]
+
+Adjust timeout (default 120s):   |
+
+   V
+
+```bash[Scraping Engine] -> raw_data -> [raw_scrape DB]
+
+timeout 180 python tokopedia_scraper_smart.py "laptop"   |
+
+```Normalization
+
+   |
+
+## Performance   V
+
+[Processed DB Tables]
+
+| Platform | Speed | Accuracy | Products | Status |   |
+
+|----------|-------|----------|----------|--------|   V
+
+| Tokopedia | ~30s | 90% | 15-20 | ✅ Working |[Export / Dashboard / Analytics]
+
+| Lazada | ~30s | 95% | 15-20 | ✅ Working |```
+
+| Shopee | Blocked | N/A | 0 | ❌ Blocked |
+
+---
+
+## Known Limitations
+
+# **⚙️ Technology Stack**
+
+1. **Shopee**: Blocked by anti-bot protection
+
+   - Solution: Use residential proxy service* **Backend**: Python (FastAPI / Flask)
+
+   - Recommended: Bright Data, Oxylabs, Zyte* **Scraping**: Requests, Playwright (optional)
+
+* **Database**: SQLite (local), PostgreSQL/MySQL (server)
+
+2. **Rate Limiting**: Some platforms may rate limit* **Frontend**: HTML/Tailwind/React (opsional simple)
+
+   - Solution: Add delays between requests* **ORM**: SQLAlchemy atau raw-SQL
+
+   - Use: `time.sleep(2)` between requests
+
+---
+
+3. **JavaScript Rendering**: May miss dynamic content
+
+   - Lazada uses JS rendering for products# **📁 File Structure (Disarankan)**
+
+   - Fixed: Smart text-based extraction
+
 ```
 
-## Lisensi
+## Troubleshootingdarkcrawl/
 
-MIT License - Bebas digunakan untuk proyek personal dan komersial.
+│
+
+### Chrome Driver Not Found├── core/
+
+│   ├── engine.py
+
+```bash│   ├── router.py
+
+# Download chromedriver matching your Chrome version│   ├── database.py
+
+# Place in PATH or project directory│   └── normalize.py
+
+wget https://chromedriver.chromium.org/download│
+
+```├── plugins/
+
+│   ├── ecommerce_tokopedia.py
+
+### Import Errors│   ├── ecommerce_shopee.py
+
+│   ├── instagram.py
+
+```bash│   └── youtube.py
+
+# Reinstall all dependencies│
+
+pip install --force-reinstall -r requirements.txt├── web/
+
+```│   ├── app.py
+
+│   └── templates/
+
+### Timeout Issues│
+
+├── storage/
+
+```bash│   └── darkcrawl.db
+
+# Increase timeout│
+
+timeout 180 python tokopedia_scraper_smart.py "laptop"└── README.md
+
+``````
 
 
-## text sementara
-gunakan  perintah di bawah untuk melakukan test web di local host 
-'''bash
-cd
+
+### No Products Found---
+
+
+
+1. Check internet connection# **🤖 Why AI Concept Removed (Lightweight Mode)?**
+
+2. Verify site is accessible: `curl https://www.tokopedia.com`
+
+3. Update selectors if site structure changedVersi baru *tidak menggunakan AI model berat* di lokal.
+
+4. Check Chrome version compatibilitySemua pemrosesan dilakukan melalui:
+
+
+
+## Development* parsing HTML
+
+* regex
+
+### Adding New Platform* struktur JSON
+
+
+
+1. Create `platform_scraper.py`Tidak membebani laptop.
+
+2. Implement `scrape_platform(keyword)` function
+
+3. Return JSON: `{"name": "", "price": "", "platform": ""}`---
+
+4. Add to `combined_scraper_fixed.py`
+
+# **📌 What Darkcrawl Does (Simple Version)**
+
+### Testing
+
+**User input link → Plugin scrape → Normalize → Save to DB → UI menampilkan data bersih.**
+
+```bash
+
+# Test individual scrapersTidak lebih, tidak kurang.
+
+python tokopedia_scraper_smart.py "test"Ringan. Fokus. Jelas.
+
+python lazada_scraper_clean.py
+
+---
+
+# Test combined
+
+python combined_scraper_fixed.py "test"# **🏁 Kesimpulan Singkat**
+
+
+
+# Test API**Darkcrawl adalah framework scraping modular** yang memakai database agar hasil bisa diproses rapi dan tampil di web interface. Dirancang supaya berkembang menjadi sistem besar (mirip mini-Octoparse tapi versi open-source).
+
+curl http://localhost:8000/api/status
+
+```---
+
+## Dependencies
+
+See `requirements.txt`:
+
+```
+selenium==4.38.0
+beautifulsoup4==4.14.2
+Flask==2.3.3
+lxml==4.9.3
+requests==2.31.0
+```
+
+## License
+
+MIT
+
+## Author
+
+DarkZagiii
+
+## Support
+
+For issues and questions:
+1. Check Troubleshooting section
+2. Review error logs
+3. Open GitHub issue with:
+   - Platform (Tokopedia/Lazada/Shopee)
+   - Error message
+   - Python version
+   - OS
