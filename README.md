@@ -301,8 +301,7 @@ Untuk issues dan pertanyaan:
 - Setelahnya: Rp 2-5 juta/bulan (tergantung tier)
 
 **Untuk update atau fitur tambahan:**
-- Email: darkcrawl@example.com
-- WhatsApp: +62-XXX-XXXX-XXXX
+- instagram: i_am_dark_zagii
 
 ---
 
